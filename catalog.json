@@ -1,0 +1,82 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2026-11-25T03:00:00Z",
+  "categories": [
+    "Utility",
+    "System",
+    "Audio",
+    "Streaming",
+    "Productivity",
+    "Developer"
+  ],
+  "plugins": [
+    {
+      "id": "com_oparada_AppLauncher",
+      "name": "App Launcher",
+      "author": "oparada1988",
+      "version": "0.1.0",
+      "category": "Utility",
+      "tags": [
+        "Utility",
+        "System"
+      ],
+      "description": "Easily launch any installed host desktop application from your Stream Deck keys with automatic freedesktop icon and label setup.",
+      "github_url": "https://github.com/oparada1988/AppLauncher",
+      "download_url": "https://github.com/oparada1988/AppLauncher/archive/refs/heads/main.zip",
+      "icon": "https://raw.githubusercontent.com/oparada1988/AppLauncher/main/assets/action_launch.png",
+      "thumbnail": "https://raw.githubusercontent.com/oparada1988/AppLauncher/main/assets/thumbnail.png",
+      "compatible_devices": [
+        "StreamDeckPlus",
+        "StreamDeckXL",
+        "StreamDeckMK2",
+        "StreamDeckMini"
+      ]
+    },
+    {
+      "id": "com_oparada_DiscordSC",
+      "name": "DiscordSC",
+      "author": "oparada1988",
+      "version": "1.2.4",
+      "category": "Streaming",
+      "tags": [
+        "Utility",
+        "Communication",
+        "Streaming"
+      ],
+      "description": "Control your Discord client's mute, deafen, notifications, server status, and input modes directly from your Stream Deck.",
+      "github_url": "https://github.com/oparada1988/DiscordSC",
+      "download_url": "https://github.com/oparada1988/DiscordSC/archive/refs/heads/main.zip",
+      "icon": "https://raw.githubusercontent.com/oparada1988/DiscordSC/main/assets/icon.png",
+      "thumbnail": "https://raw.githubusercontent.com/oparada1988/DiscordSC/main/assets/thumbnail.png",
+      "compatible_devices": [
+        "StreamDeckPlus",
+        "StreamDeckXL",
+        "StreamDeckMK2",
+        "StreamDeckMini"
+      ]
+    },
+    {
+      "id": "com_oparada_GoveeStreamController",
+      "name": "Govee Controller",
+      "author": "oparada1988",
+      "version": "1.0.1",
+      "category": "Utility",
+      "tags": [
+        "Smart Home",
+        "Utility",
+        "System"
+      ],
+      "description": "Control Govee smart lights, LED strips, and home appliances directly from your Stream Deck.",
+      "github_url": "https://github.com/oparada1988/Govee-Streamcontroller",
+      "download_url": "https://github.com/oparada1988/Govee-Streamcontroller/archive/refs/heads/main.zip",
+      "icon": "https://raw.githubusercontent.com/oparada1988/Govee-Streamcontroller/main/assets/govee.png",
+      "thumbnail": "https://raw.githubusercontent.com/oparada1988/Govee-Streamcontroller/main/assets/thumbnail.png",
+      "compatible_devices": [
+        "StreamDeckPlus",
+        "StreamDeckXL",
+        "StreamDeckMK2",
+        "StreamDeckMini"
+      ]
+    }
+  ]
+}
