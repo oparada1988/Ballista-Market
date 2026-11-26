@@ -1,0 +1,43 @@
+{
+  "id": "com_yourhandle_MyPlugin",
+  "name": "My Plugin",
+  "version": "1.0.0",
+  "author": "yourhandle",
+  "license": "MIT",
+  "runtime": "ballista",
+  "min_ballista_version": "0.1.0",
+  "repository": "https://github.com/yourhandle/MyPlugin",
+  "entrypoint": {
+    "linux-x86_64": "bin/linux-x86_64/ballista-my-plugin",
+    "linux-aarch64": "bin/linux-aarch64/ballista-my-plugin"
+  },
+  "icon": "assets/icon.png",
+  "thumbnail": "assets/thumbnail.png",
+  "short_description": "A fast native Rust plugin for Ballista.",
+  "description": "Starter template demonstrating Native Ballista Rust plugin actions across LCD keys, Stream Deck + rotary dials, and touchscreen taps.",
+  "tags": [
+    "Utility",
+    "Native Rust"
+  ],
+  "surfaces": [
+    "keys",
+    "dials",
+    "touchscreen"
+  ],
+  "actions": [
+    {
+      "id": "com_yourhandle_MyPlugin::CounterAction",
+      "name": "Counter",
+      "description": "Increment on key press or dial turn; tap touchscreen to reset",
+      "icon": "assets/counter.png",
+      "surfaces": ["keys", "dials", "touchscreen"]
+    },
+    {
+      "id": "com_yourhandle_MyPlugin::QuickAction",
+      "name": "Quick Action",
+      "description": "Single-press LCD key example with configurable label",
+      "icon": "assets/quick_action.png",
+      "surfaces": ["keys"]
+    }
+  ]
+}

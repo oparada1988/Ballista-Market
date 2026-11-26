@@ -1,0 +1,46 @@
+name: Build & Release Native Ballista Plugin
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-linux-x86_64:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build release binary
+        run: cargo build --release
+
+      - name: Package Ballista plugin zip
+        run: |
+          PLUGIN_ID="$(python3 -c "import json; print(json.load(open('manifest.json'))['id'])")"
+          BIN_NAME="$(python3 -c "import json, os; print(os.path.basename(json.load(open('manifest.json'))['entrypoint']['linux-x86_64']))")"
+          VERSION="${GITHUB_REF_NAME#v}"
+          if [[ "$GITHUB_REF_TYPE" != "tag" ]]; then
+            VERSION="$(python3 -c "import json; print(json.load(open('manifest.json'))['version'])")"
+          fi
+          mkdir -p "pkg/${PLUGIN_ID}/bin/linux-x86_64" "pkg/${PLUGIN_ID}/assets"
+          cp manifest.json LICENSE README.md "pkg/${PLUGIN_ID}/"
+          cp "target/release/${BIN_NAME}" "pkg/${PLUGIN_ID}/bin/linux-x86_64/${BIN_NAME}"
+          chmod +x "pkg/${PLUGIN_ID}/bin/linux-x86_64/${BIN_NAME}"
+          if compgen -G "assets/*.png" > /dev/null || compgen -G "assets/*.svg" > /dev/null; then
+            cp assets/*.png assets/*.svg "pkg/${PLUGIN_ID}/assets/" 2>/dev/null || true
+          fi
+          (cd pkg && zip -r "../${PLUGIN_ID}-v${VERSION}.zip" "${PLUGIN_ID}")
+
+      - name: Upload Release Asset
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "*-v*.zip"

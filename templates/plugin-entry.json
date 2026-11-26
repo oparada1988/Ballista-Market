@@ -1,0 +1,51 @@
+{
+  "id": "com_yourhandle_MyPlugin",
+  "name": "My Plugin",
+  "author": "yourhandle",
+  "license": "MIT",
+  "version": "1.0.0",
+  "runtime": "ballista",
+  "min_ballista_version": "0.1.0",
+  "category": "Utility",
+  "tags": [
+    "Utility",
+    "Native Rust"
+  ],
+  "short_description": "Concise one-line tagline shown under the Store title and on browse cards.",
+  "description": "Full plugin description displayed in the Detail page card.\n\nUse blank lines to separate paragraphs and highlight what your plugin does across LCD keys, Stream Deck + dials, and touchscreens.",
+  "github_url": "https://github.com/yourhandle/MyPlugin",
+  "download_url": "https://github.com/yourhandle/MyPlugin/releases/download/v1.0.0/MyPlugin-v1.0.0.zip",
+  "icon": "https://raw.githubusercontent.com/yourhandle/MyPlugin/main/assets/icon.png",
+  "thumbnail": "https://raw.githubusercontent.com/yourhandle/MyPlugin/main/assets/thumbnail.png",
+  "screenshots": [
+    "https://raw.githubusercontent.com/yourhandle/MyPlugin/main/store/screenshots/01-overview.png",
+    "https://raw.githubusercontent.com/yourhandle/MyPlugin/main/store/screenshots/02-actions.png"
+  ],
+  "surfaces": [
+    "keys",
+    "dials",
+    "touchscreen"
+  ],
+  "compatible_devices": [
+    "StreamDeckPlus",
+    "StreamDeckPlusXL",
+    "StreamDeckXL",
+    "StreamDeckMK2",
+    "StreamDeckMini",
+    "StreamDeckNeo"
+  ],
+  "actions": [
+    {
+      "name": "Counter",
+      "description": "Press key or turn dial to increment/decrement; tap LCD to reset",
+      "surfaces": ["keys", "dials", "touchscreen"]
+    },
+    {
+      "name": "Quick Action",
+      "description": "Trigger a custom action with one press",
+      "surfaces": ["keys"]
+    }
+  ],
+  "rating": null,
+  "rating_count": 0
+}

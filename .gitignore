@@ -1,4 +1,7 @@
 .DS_Store
-*.swp
-*.bak
-*~
+__pycache__/
+*.pyc
+templates/*/target/
+templates/*/dist/
+templates/*/bin/
+templates/*/Cargo.lock
