@@ -1,0 +1,111 @@
+{
+  "id": "com_oparada_DiscordSC",
+  "name": "DiscordSC",
+  "author": "oparada1988",
+  "license": "MIT",
+  "version": "1.2.4",
+  "runtime": "streamcontroller",
+  "min_ballista_version": "0.1.0",
+  "category": "Streaming",
+  "tags": [
+    "Streaming",
+    "Communication",
+    "Discord",
+    "Utility"
+  ],
+  "short_description": "Full Discord voice, soundboard, channel, call mixer & notification control over local IPC.",
+  "description": "Communicates directly with your local Discord desktop client over Discord IPC for real-time, bi-directional state synchronization — no StreamController installation required.\n\nToggle microphone mute, deafen, push-to-talk, and input modes with live connection-aware icons, jump into voice or text channels, trigger soundboard clips, monitor unread DM notifications, and mix per-user call volumes right from Stream Deck + dials.",
+  "github_url": "https://github.com/oparada1988/DiscordSC",
+  "download_url": "https://github.com/oparada1988/DiscordSC/archive/refs/heads/main.zip",
+  "icon": "https://raw.githubusercontent.com/oparada1988/DiscordSC/main/assets/icon.png",
+  "thumbnail": "https://raw.githubusercontent.com/oparada1988/DiscordSC/main/assets/thumbnail.png",
+  "screenshots": [],
+  "surfaces": [
+    "keys",
+    "dials",
+    "touchscreen"
+  ],
+  "compatible_devices": [
+    "StreamDeckPlus",
+    "StreamDeckPlusXL",
+    "StreamDeckXL",
+    "StreamDeckMK2",
+    "StreamDeckMini",
+    "StreamDeckNeo"
+  ],
+  "actions": [
+    {
+      "name": "Mute Toggle",
+      "description": "Toggle Discord microphone mute with live visual state",
+      "surfaces": [
+        "keys"
+      ]
+    },
+    {
+      "name": "Deafen Toggle",
+      "description": "Instantly deafen and mute active Discord voice",
+      "surfaces": [
+        "keys"
+      ]
+    },
+    {
+      "name": "Call Mixer",
+      "description": "Adjust per-participant voice volume & mute on dials and LCD",
+      "surfaces": [
+        "dials",
+        "touchscreen"
+      ]
+    },
+    {
+      "name": "Soundboard",
+      "description": "Play any server soundboard clip in your active voice channel",
+      "surfaces": [
+        "keys"
+      ]
+    },
+    {
+      "name": "Voice Channel",
+      "description": "Join or leave a pinned Discord voice channel with live indicator",
+      "surfaces": [
+        "keys"
+      ]
+    },
+    {
+      "name": "Text Channel",
+      "description": "Jump straight to a pinned Discord text channel",
+      "surfaces": [
+        "keys"
+      ]
+    },
+    {
+      "name": "Push to Talk",
+      "description": "Hold key to transmit microphone audio with active indicator",
+      "surfaces": [
+        "keys"
+      ]
+    },
+    {
+      "name": "Input Mode",
+      "description": "Switch between Voice Activity and Push-to-Talk mode",
+      "surfaces": [
+        "keys"
+      ]
+    },
+    {
+      "name": "Server Status",
+      "description": "Live server icon and online member count badge",
+      "surfaces": [
+        "keys"
+      ]
+    },
+    {
+      "name": "Notification Hub",
+      "description": "Cycle unread DMs & mentions with avatar and count badge",
+      "surfaces": [
+        "keys"
+      ]
+    }
+  ],
+  "rating": null,
+  "rating_count": 0
+}

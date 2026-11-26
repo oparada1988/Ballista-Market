@@ -1,0 +1,67 @@
+{
+  "id": "com_oparada_GoveeStreamController",
+  "name": "Govee Controller",
+  "author": "oparada1988",
+  "license": "MIT",
+  "version": "1.0.1",
+  "runtime": "streamcontroller",
+  "min_ballista_version": "0.1.0",
+  "category": "Utility",
+  "tags": [
+    "Smart Home",
+    "Lighting",
+    "Utility"
+  ],
+  "short_description": "Control Govee smart lights, LED strips, scenes, and home appliances from your Stream Deck.",
+  "description": "Connect your Govee smart lighting and home appliances directly to your Stream Deck.\n\nToggle device power, adjust brightness levels, set custom RGB colors, and trigger preset lighting scenes with instant visual feedback.",
+  "github_url": "https://github.com/oparada1988/Govee-Streamcontroller",
+  "download_url": "https://github.com/oparada1988/Govee-Streamcontroller/archive/refs/heads/main.zip",
+  "icon": "https://raw.githubusercontent.com/oparada1988/Govee-Streamcontroller/main/assets/govee.png",
+  "thumbnail": "https://raw.githubusercontent.com/oparada1988/Govee-Streamcontroller/main/assets/thumbnail.png",
+  "screenshots": [],
+  "surfaces": [
+    "keys",
+    "dials"
+  ],
+  "compatible_devices": [
+    "StreamDeckPlus",
+    "StreamDeckPlusXL",
+    "StreamDeckXL",
+    "StreamDeckMK2",
+    "StreamDeckMini",
+    "StreamDeckNeo"
+  ],
+  "actions": [
+    {
+      "name": "Power Toggle",
+      "description": "Turn Govee lights and smart appliances on or off",
+      "surfaces": [
+        "keys"
+      ]
+    },
+    {
+      "name": "Brightness Control",
+      "description": "Set or step light brightness percentages",
+      "surfaces": [
+        "keys",
+        "dials"
+      ]
+    },
+    {
+      "name": "Color Picker",
+      "description": "Apply custom RGB color presets with one press",
+      "surfaces": [
+        "keys"
+      ]
+    },
+    {
+      "name": "Scene Trigger",
+      "description": "Activate built-in Govee lighting scenes and effects",
+      "surfaces": [
+        "keys"
+      ]
+    }
+  ],
+  "rating": null,
+  "rating_count": 0
+}

@@ -1,0 +1,99 @@
+{
+  "id": "com_oparada_MusicAssistant",
+  "name": "Music Assistant",
+  "author": "oparada1988",
+  "license": "MIT",
+  "version": "1.0.0",
+  "runtime": "ballista",
+  "min_ballista_version": "0.1.0",
+  "category": "Audio",
+  "tags": [
+    "Music",
+    "Audio",
+    "Smart Home",
+    "Native Rust"
+  ],
+  "short_description": "Connect to your Music Assistant server and control playlists, playback, and volume at the press of a button.",
+  "description": "Connect directly to your Music Assistant (v2+) server natively in Rust to manage your playlists, favorite music, and players with real-time WebSocket updates.\n\nLaunch playlists with live cover artwork, control playback and volume from LCD keys or Stream Deck + dials, and access all your connected music providers effortlessly.",
+  "github_url": "https://github.com/oparada1988/MASS",
+  "download_url": "https://github.com/oparada1988/MASS/releases/download/v1.0.0/MASS-v1.0.0.zip",
+  "icon": "https://raw.githubusercontent.com/oparada1988/MASS/main/assets/icon.png",
+  "thumbnail": "https://raw.githubusercontent.com/oparada1988/MASS/main/assets/thumbnail.png",
+  "screenshots": [
+    "https://raw.githubusercontent.com/oparada1988/MASS/main/store/screenshots/01-overview.png",
+    "https://raw.githubusercontent.com/oparada1988/MASS/main/store/screenshots/02-player-actions.png",
+    "https://raw.githubusercontent.com/oparada1988/MASS/main/store/screenshots/03-providers.png"
+  ],
+  "surfaces": [
+    "keys",
+    "dials",
+    "touchscreen"
+  ],
+  "compatible_devices": [
+    "StreamDeckPlus",
+    "StreamDeckPlusXL",
+    "StreamDeckXL",
+    "StreamDeckMK2",
+    "StreamDeckMini",
+    "StreamDeckNeo"
+  ],
+  "actions": [
+    {
+      "name": "Now Playing & Volume",
+      "description": "Live album art, track info, rotary volume & touchscreen skip zones",
+      "surfaces": ["keys", "dials", "touchscreen"]
+    },
+    {
+      "name": "Play Playlist",
+      "description": "Launch any Music Assistant playlist with live cover art on the key",
+      "surfaces": ["keys"]
+    },
+    {
+      "name": "Volume / Mute",
+      "description": "Adjust player volume with rotary dial and press to toggle mute",
+      "surfaces": ["keys", "dials"]
+    },
+    {
+      "name": "Play / Pause",
+      "description": "Live state-aware play/pause toggle with optional dial volume",
+      "surfaces": ["keys", "dials"]
+    },
+    {
+      "name": "Play",
+      "description": "Resume playback on target or active player",
+      "surfaces": ["keys"]
+    },
+    {
+      "name": "Pause",
+      "description": "Pause active playback on target player",
+      "surfaces": ["keys"]
+    },
+    {
+      "name": "Stop",
+      "description": "Stop active playback on target player",
+      "surfaces": ["keys"]
+    },
+    {
+      "name": "Next Track",
+      "description": "Skip to next track in the player queue",
+      "surfaces": ["keys"]
+    },
+    {
+      "name": "Previous Track",
+      "description": "Return to previous track in the player queue",
+      "surfaces": ["keys"]
+    },
+    {
+      "name": "Volume Up",
+      "description": "Increase target player volume by a configurable step",
+      "surfaces": ["keys"]
+    },
+    {
+      "name": "Volume Down",
+      "description": "Decrease target player volume by a configurable step",
+      "surfaces": ["keys"]
+    }
+  ],
+  "rating": null,
+  "rating_count": 0
+}

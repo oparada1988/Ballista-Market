@@ -1,0 +1,44 @@
+{
+  "id": "com_oparada_AppLauncher",
+  "name": "App Launcher",
+  "author": "oparada1988",
+  "license": "MIT",
+  "version": "0.1.0",
+  "runtime": "streamcontroller",
+  "min_ballista_version": "0.1.0",
+  "category": "Utility",
+  "tags": [
+    "Utility",
+    "System",
+    "Launcher"
+  ],
+  "short_description": "Launch any installed Linux desktop app, Flatpak, or Snap with automatic icon and label setup.",
+  "description": "Automatically discovers installed desktop applications across native packages, Flatpaks, and Snaps so you can launch them with a single tap from your Stream Deck.\n\nIncludes a searchable application picker, automatic Freedesktop icon and label setup, custom label overrides, and one-click app rescanning without restarting.",
+  "github_url": "https://github.com/oparada1988/AppLauncher",
+  "download_url": "https://github.com/oparada1988/AppLauncher/archive/refs/heads/main.zip",
+  "icon": "https://raw.githubusercontent.com/oparada1988/AppLauncher/main/assets/action_launch.png",
+  "thumbnail": "https://raw.githubusercontent.com/oparada1988/AppLauncher/main/assets/thumbnail.png",
+  "screenshots": [],
+  "surfaces": [
+    "keys"
+  ],
+  "compatible_devices": [
+    "StreamDeckPlus",
+    "StreamDeckPlusXL",
+    "StreamDeckXL",
+    "StreamDeckMK2",
+    "StreamDeckMini",
+    "StreamDeckNeo"
+  ],
+  "actions": [
+    {
+      "name": "Launch App",
+      "description": "Pick any system, Flatpak, or Snap app with automatic icon setup",
+      "surfaces": [
+        "keys"
+      ]
+    }
+  ],
+  "rating": null,
+  "rating_count": 0
+}
