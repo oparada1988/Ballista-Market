@@ -2,7 +2,7 @@
   "id": "com_oparada_AppLauncher",
   "name": "App Launcher",
   "author": "oparada1988",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "version": "0.1.0",
   "runtime": "streamcontroller",
   "min_ballista_version": "0.1.0",

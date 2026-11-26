@@ -3,7 +3,7 @@
   "name": "My Plugin",
   "version": "1.0.0",
   "author": "yourhandle",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "runtime": "ballista",
   "min_ballista_version": "0.1.0",
   "repository": "https://github.com/yourhandle/MyPlugin",

@@ -155,6 +155,11 @@ def validate_plugin_dict(
         if not isinstance(p["rating_count"], int) or p["rating_count"] < 0:
             errors.append(f"[{pid}] 'rating_count' must be a non-negative integer")
 
+    if "added_at" in p:
+        errors.append(
+            f"[{pid}] 'added_at' is generated automatically from Git history by build_catalog.py — do not set it in plugin.json"
+        )
+
     if check_network:
         for url_field in ("github_url", "download_url", "icon", "thumbnail"):
             url = p.get(url_field, "")
@@ -210,16 +215,29 @@ def main() -> int:
             catalog = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
             if "plugins" not in catalog or not isinstance(catalog["plugins"], list):
                 errors.append("catalog.json: top-level 'plugins' must be a JSON array")
-            elif args.check_catalog_sync:
-                expected_sorted = sorted(
-                    discovered_plugins,
-                    key=lambda p: (p.get("name", "").lower(), p.get("id", "").lower()),
-                )
-                if catalog["plugins"] != expected_sorted:
-                    errors.append(
-                        "catalog.json is out of sync with plugins/*/plugin.json. "
-                        "Run `python3 scripts/build_catalog.py`."
-                    )
+            else:
+                if "spotlight" in catalog:
+                    spot = catalog["spotlight"]
+                    if not isinstance(spot, list) or not all(isinstance(s, str) for s in spot):
+                        errors.append("catalog.json: top-level 'spotlight' must be an array of plugin IDs")
+                    else:
+                        if len(spot) != len(set(spot)):
+                            errors.append("catalog.json: 'spotlight' contains duplicate plugin IDs")
+                        for sid in spot:
+                            if sid not in seen_ids:
+                                errors.append(f"catalog.json: 'spotlight' references unknown plugin id '{sid}'")
+
+                if args.check_catalog_sync:
+                    sys.path.insert(0, str(Path(__file__).resolve().parent))
+                    import build_catalog  # noqa: PLC0415
+
+                    expected_plugins = build_catalog.load_plugins()
+                    expected_spotlight = build_catalog.compute_spotlight(expected_plugins)
+                    if catalog["plugins"] != expected_plugins or catalog.get("spotlight") != expected_spotlight:
+                        errors.append(
+                            "catalog.json is out of sync with plugins/*/plugin.json or spotlight rules. "
+                            "Run `python3 scripts/build_catalog.py`."
+                        )
         except Exception as e:
             errors.append(f"Invalid JSON in catalog.json: {e}")
     else:

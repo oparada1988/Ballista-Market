@@ -2,7 +2,7 @@
   "id": "com_oparada_DiscordSC",
   "name": "DiscordSC",
   "author": "oparada1988",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "version": "1.2.4",
   "runtime": "streamcontroller",
   "min_ballista_version": "0.1.0",

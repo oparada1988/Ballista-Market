@@ -8,8 +8,11 @@ Ballista Market supports two plugin runtimes, clearly badged in the Store UI:
 
 ---
 
-## Starter Templates & Reference Implementation
+## Documentation & Starter Templates
 
+- **[Publishing Guide (`docs/PUBLISHING.md`)](./docs/PUBLISHING.md)** — end-to-end walkthrough for packaging, testing, validating, submitting, and updating plugins.
+- **[Migrating from StreamController (`docs/MIGRATING_FROM_STREAMCONTROLLER.md`)](./docs/MIGRATING_FROM_STREAMCONTROLLER.md)** — port an existing Python StreamController plugin to a Native Ballista Rust binary.
+- **[Contributing Guidelines (`CONTRIBUTING.md`)](./CONTRIBUTING.md)** — quick PR rules and licensing policy.
 - **Native Rust Starter Template:** [`templates/native-rust-plugin/`](./templates/native-rust-plugin) — ready-to-build Rust template with JSONL IPC protocol, key/dial/touchscreen handling, persistent settings, local packaging script, and GitHub Actions release workflow.
 - **Market Catalog Entry Template:** [`templates/plugin-entry.json`](./templates/plugin-entry.json) — copy into `plugins/<your_plugin_id>/plugin.json` when submitting a PR.
 - **Production Native Reference Plugin:** **[Music Assistant for Ballista (`MASS`)](https://github.com/oparada1988/MASS)** — real-world Native Rust plugin showcasing async WebSockets (`/ws`), live artwork caching, custom `200×100` Stream Deck + dial cards, touchscreen skip zones, and 11 actions.
@@ -124,6 +127,19 @@ Ballista-Market/
 | `rating` | No | `number \| null` | Optional community rating (`0.0`–`5.0`); cleanly hidden in UI when `null`. |
 | `rating_count` | No | `integer` | Number of community ratings. |
 
+*(Do not manually set `added_at` in `plugin.json` — `build_catalog.py` stamps it automatically from Git history.)*
+
+---
+
+## Spotlight Rules
+
+Spotlight banners at the top of the Ballista Store are computed automatically by [`scripts/build_catalog.py`](./scripts/build_catalog.py) into the top-level `spotlight` list in `catalog.json`:
+
+1. **7-Day New Arrivals:** Newly submitted plugins automatically appear at the front of Spotlight for **7 days** from the UTC date their `plugins/<id>/plugin.json` manifest was first merged to `main` (newest first, prioritizing Native Ballista plugins on same-day ties).
+2. **Banner Requirement:** A plugin must provide a valid HTTPS `thumbnail` (`1168 × 420 px`) to be eligible for Spotlight.
+3. **Rotating Fallback:** Whenever fewer than 6 new plugins qualify (or during quiet weeks with no submissions), remaining slots backfill automatically using a deterministic weekly rotation across all eligible plugins so Spotlight stays full and balanced (6–9 slots in 3-card slides).
+4. **Daily Refresh:** [`build-catalog.yml`](./.github/workflows/build-catalog.yml) runs on every merge and once daily at `00:00 UTC` (committing only when `catalog.json` actually changes).
+
 ---
 
 ## How to Submit or Update a Plugin
@@ -140,3 +156,11 @@ Ballista-Market/
 4. **Open a Pull Request**
    - Automated checks verify schema, unique IDs, valid categories/surfaces/devices, and live HTTPS asset URLs.
    - Once merged to `main`, `build-catalog.yml` updates `catalog.json` automatically and Ballista users receive the new listing or one-click update.
+
+For full step-by-step instructions (including GitHub Release packaging, direct image URLs, and publishing version updates), see **[`docs/PUBLISHING.md`](./docs/PUBLISHING.md)**.
+
+---
+
+## License
+
+`Ballista-Market`, its build scripts, and official starter templates are licensed under **[GNU GPL v3.0 or later (`GPL-3.0-or-later`)](./LICENSE)**. Individual community plugins listed in `plugins/` retain their own declared open-source SPDX licenses.

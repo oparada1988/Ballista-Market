@@ -7,6 +7,9 @@ on:
     paths:
       - "plugins/**"
       - "scripts/build_catalog.py"
+  schedule:
+    # Daily check at 00:00 UTC to expire 7-day new arrivals and refresh weekly Spotlight rotation
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 permissions:
@@ -18,6 +21,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Compile catalog.json from plugins/*/plugin.json
         run: python3 scripts/build_catalog.py

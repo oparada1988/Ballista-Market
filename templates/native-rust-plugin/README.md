@@ -24,7 +24,9 @@ A minimal, zero-bloat starter template for building **Native Ballista Plugins** 
    ./build-package.sh
    ```
 5. Test in Ballista via **Plugin Store → Install Local → Install from ZIP (.zip)...** and pick the generated archive in `dist/`.
-6. Tag a release (`git tag v1.0.0 && git push origin v1.0.0`) so `.github/workflows/release.yml` builds and publishes your `.zip` to GitHub Releases, then submit your plugin to [Ballista-Market](https://github.com/oparada1988/Ballista-Market) using `templates/plugin-entry.json`.
+6. Tag a release (`git tag v1.0.0 && git push origin v1.0.0`) so `.github/workflows/release.yml` builds and publishes your `.zip` to GitHub Releases, then follow the **[Publishing Guide](../../docs/PUBLISHING.md)** to submit your plugin to [Ballista-Market](https://github.com/oparada1988/Ballista-Market) using `templates/plugin-entry.json`.
+
+> Porting an existing Python StreamController plugin? See **[Migrating from StreamController](../../docs/MIGRATING_FROM_STREAMCONTROLLER.md)**.
 
 ---
 
